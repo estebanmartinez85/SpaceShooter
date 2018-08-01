@@ -14,7 +14,8 @@ class SPACESHOOTER_API AStartGame : public ALevelScriptActor
 {
 	GENERATED_BODY()
 	
-	
+public:
+	void StartGame();
 	
 	
 };
