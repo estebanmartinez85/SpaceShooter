@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Components/InputComponent.h"
 #include "Components/ActorComponent.h"
+#include "Paper2D/Classes/PaperSpriteActor.h"
 #include "ShipController.generated.h"
 
 
@@ -35,11 +36,16 @@ public:
 	void OnLeftReleased();
 
 	UInputComponent* InputComponent = nullptr;
-	
+	UPROPERTY(BlueprintReadWrite)
+	TSubclassOf<APaperSpriteActor> laser;
+
+	bool laserspawned = false;
+
 private:
 	bool MoveUp = false;
 	bool MoveRight = false;
 	bool MoveDown = false;
 	bool MoveLeft = false;
-
+	FVector previousLocation = FVector().OneVector;
+	
 };
